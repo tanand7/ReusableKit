@@ -13,7 +13,7 @@ import UIKit
 /// such as Device model, OSName, version, UUID etc
 open class SystemInfoAPI {
     
-    static let shared = SystemInfoAPI()
+    open static let shared = SystemInfoAPI()
     
     // MARK:- Device Specific details -
     
