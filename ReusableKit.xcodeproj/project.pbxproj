@@ -22,6 +22,7 @@
 		17450A931E4987B6009D4519 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17450A821E4987B6009D4519 /* LoginManager.swift */; };
 		17450A941E4987B6009D4519 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17450A831E4987B6009D4519 /* RoundedImage.swift */; };
 		17450A951E4987B6009D4519 /* SignUpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17450A841E4987B6009D4519 /* SignUpManager.swift */; };
+		17FF4FAB1E5EA6A300C31E80 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FF4FAA1E5EA6A300C31E80 /* CardView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		17450A821E4987B6009D4519 /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		17450A831E4987B6009D4519 /* RoundedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
 		17450A841E4987B6009D4519 /* SignUpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpManager.swift; sourceTree = "<group>"; };
+		17FF4FAA1E5EA6A300C31E80 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		17450A7F1E4987B6009D4519 /* UIManagers */ = {
 			isa = PBXGroup;
 			children = (
+				17FF4FAA1E5EA6A300C31E80 /* CardView.swift */,
 				17450A801E4987B6009D4519 /* CustomButton.swift */,
 				17450A811E4987B6009D4519 /* CustomTextField.swift */,
 				17450A821E4987B6009D4519 /* LoginManager.swift */,
@@ -210,6 +213,7 @@
 				17450A8E1E4987B6009D4519 /* StringExtension.swift in Sources */,
 				17450A8F1E4987B6009D4519 /* UIViewControllerOperations.swift in Sources */,
 				17450A8B1E4987B6009D4519 /* DataExtension.swift in Sources */,
+				17FF4FAB1E5EA6A300C31E80 /* CardView.swift in Sources */,
 				17450A901E4987B6009D4519 /* UIVIewOperations.swift in Sources */,
 				17450A8C1E4987B6009D4519 /* IntExtension.swift in Sources */,
 				17450A8A1E4987B6009D4519 /* UIImageViewExtension.swift in Sources */,
