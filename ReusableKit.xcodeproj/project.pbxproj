@@ -22,7 +22,10 @@
 		17450A931E4987B6009D4519 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17450A821E4987B6009D4519 /* LoginManager.swift */; };
 		17450A941E4987B6009D4519 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17450A831E4987B6009D4519 /* RoundedImage.swift */; };
 		17450A951E4987B6009D4519 /* SignUpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17450A841E4987B6009D4519 /* SignUpManager.swift */; };
-		17FF4FAB1E5EA6A300C31E80 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17FF4FAA1E5EA6A300C31E80 /* CardView.swift */; };
+		17E647861F7243F700B6D554 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E647851F7243F700B6D554 /* FloatRatingView.swift */; };
+		17E647881F72447B00B6D554 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E647871F72447B00B6D554 /* CardView.swift */; };
+		17E6478A1F72469400B6D554 /* UICollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E647891F72469400B6D554 /* UICollectionViewExtension.swift */; };
+		17E6478C1F72502D00B6D554 /* CommonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E6478B1F72502D00B6D554 /* CommonExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +46,10 @@
 		17450A821E4987B6009D4519 /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		17450A831E4987B6009D4519 /* RoundedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
 		17450A841E4987B6009D4519 /* SignUpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpManager.swift; sourceTree = "<group>"; };
-		17FF4FAA1E5EA6A300C31E80 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		17E647851F7243F700B6D554 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
+		17E647871F72447B00B6D554 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		17E647891F72469400B6D554 /* UICollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtension.swift; sourceTree = "<group>"; };
+		17E6478B1F72502D00B6D554 /* CommonExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +82,7 @@
 		17450A681E497EEC009D4519 /* ReusableKit */ = {
 			isa = PBXGroup;
 			children = (
+				17E647841F7243F700B6D554 /* CustomUIs */,
 				17450A711E4987B6009D4519 /* APIs */,
 				17450A741E4987B6009D4519 /* Classes */,
 				17450A771E4987B6009D4519 /* Extensions */,
@@ -112,6 +119,8 @@
 				17450A7C1E4987B6009D4519 /* StringExtension.swift */,
 				17450A7D1E4987B6009D4519 /* UIViewControllerOperations.swift */,
 				17450A7E1E4987B6009D4519 /* UIVIewOperations.swift */,
+				17E647891F72469400B6D554 /* UICollectionViewExtension.swift */,
+				17E6478B1F72502D00B6D554 /* CommonExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -119,7 +128,6 @@
 		17450A7F1E4987B6009D4519 /* UIManagers */ = {
 			isa = PBXGroup;
 			children = (
-				17FF4FAA1E5EA6A300C31E80 /* CardView.swift */,
 				17450A801E4987B6009D4519 /* CustomButton.swift */,
 				17450A811E4987B6009D4519 /* CustomTextField.swift */,
 				17450A821E4987B6009D4519 /* LoginManager.swift */,
@@ -127,6 +135,15 @@
 				17450A841E4987B6009D4519 /* SignUpManager.swift */,
 			);
 			path = UIManagers;
+			sourceTree = "<group>";
+		};
+		17E647841F7243F700B6D554 /* CustomUIs */ = {
+			isa = PBXGroup;
+			children = (
+				17E647851F7243F700B6D554 /* FloatRatingView.swift */,
+				17E647871F72447B00B6D554 /* CardView.swift */,
+			);
+			path = CustomUIs;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -213,16 +230,19 @@
 				17450A8E1E4987B6009D4519 /* StringExtension.swift in Sources */,
 				17450A8F1E4987B6009D4519 /* UIViewControllerOperations.swift in Sources */,
 				17450A8B1E4987B6009D4519 /* DataExtension.swift in Sources */,
-				17FF4FAB1E5EA6A300C31E80 /* CardView.swift in Sources */,
+				17E6478A1F72469400B6D554 /* UICollectionViewExtension.swift in Sources */,
 				17450A901E4987B6009D4519 /* UIVIewOperations.swift in Sources */,
+				17E647861F7243F700B6D554 /* FloatRatingView.swift in Sources */,
 				17450A8C1E4987B6009D4519 /* IntExtension.swift in Sources */,
 				17450A8A1E4987B6009D4519 /* UIImageViewExtension.swift in Sources */,
 				17450A931E4987B6009D4519 /* LoginManager.swift in Sources */,
+				17E6478C1F72502D00B6D554 /* CommonExtensions.swift in Sources */,
 				17450A911E4987B6009D4519 /* CustomButton.swift in Sources */,
 				17450A8D1E4987B6009D4519 /* UserDefaultsExtension.swift in Sources */,
 				17450A941E4987B6009D4519 /* RoundedImage.swift in Sources */,
 				17450A891E4987B6009D4519 /* Utilities.swift in Sources */,
 				17450A871E4987B6009D4519 /* SystemInfoAPI.swift in Sources */,
+				17E647881F72447B00B6D554 /* CardView.swift in Sources */,
 				17450A951E4987B6009D4519 /* SignUpManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

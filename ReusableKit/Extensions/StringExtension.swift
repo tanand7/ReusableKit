@@ -94,6 +94,43 @@ extension String {
         return randomString(length: length)
     }
     
+    /// Returns the boolvalue from string
+    public var boolValue:Bool {
+        return (self.uppercased() == "NA") ? false : NSString(string: self).boolValue
+    }
+    
+    /// Converts milliseconds to date, returns nil if invalid data passed
+    public var milliSecondsToDate:Date? {
+        
+        guard let int64 = Int64(self) else {
+            return nil
+        }
+        
+        let doubleValue = Double(int64/1000)
+        
+        return Date(timeIntervalSince1970: doubleValue)
+    }
+    
+    /// Converts a date string from one format to another format
+    ///
+    /// - Parameters:
+    ///   - toFormat: New format to which the date should be converted
+    ///   - fromFormat: Current format of the date
+    /// - Returns: Date string with new format
+    public func convertTo(DateFormat toFormat:String, fromFromat fromFormat:String) -> String {
+        
+        var convertedString       = self
+        let inputFormatter        = DateFormatter()
+        inputFormatter.dateFormat = fromFormat
+        
+        if let date = inputFormatter.date(from: self) {
+            inputFormatter.dateFormat = toFormat
+            convertedString           = inputFormatter.string(from: date)
+        }
+        
+        return convertedString
+    }
+    
     // MARK:- Private Methods -
     
     /// Verify whether the string is an email or not
