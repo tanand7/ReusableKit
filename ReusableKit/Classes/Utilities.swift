@@ -48,6 +48,22 @@ open class Utilities {
         return getDummyResponeJSON(fromFile: fileName)
     }
     
+    /// Retrieves a dictionary from referred plist file saved in bundle
+    ///
+    /// - Parameter fileName: Name of plist file without extension
+    /// - Returns: result dictionary of type [String:Any], nil for invalid data
+    open class func getJSONDictionary(PlistFile fileName:String) -> [String:Any]? {
+        return getJSONDictionaryFrom(PlistFile: fileName)
+    }
+    
+    /// Retrieves an array from referred plist file saved in bundle
+    ///
+    /// - Parameter fileName: Name of plist file without extension
+    /// - Returns: result array of type [Any], nil for invalid data
+    open class func getArray(PlistFile fileName:String) -> [Any]? {
+        return getArrayFrom(PlistFile:fileName)
+    }
+    
     // MARK: - Private Methods -
     
     /**
@@ -55,7 +71,7 @@ open class Utilities {
      - parameter message: Message to be displayed
      - parameter view:    View Controller
      */
-    fileprivate class func displayAlertWithMessage(_ message:String, inViewController view:UIViewController) {
+    private class func displayAlertWithMessage(_ message:String, inViewController view:UIViewController) {
         
         let dialog = UIAlertController(title: SystemInfoAPI.shared .appName, message: message, preferredStyle: .alert);
         let okayAction = UIAlertAction(title: "Ok", style: .default, handler: nil);
@@ -68,7 +84,7 @@ open class Utilities {
      - parameter method:  Method to be invoked
      - parameter delay: delay to be applied
      */
-    fileprivate class func invokeFunction(_ method:@escaping (() -> Void), withDelay delay:Int) {
+    private class func invokeFunction(_ method:@escaping (() -> Void), withDelay delay:Int) {
         let triggerTime = (Int64(NSEC_PER_SEC) * Int64(delay))
         DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(triggerTime) / Double(NSEC_PER_SEC), execute: { () -> Void in
             method();
@@ -81,7 +97,7 @@ open class Utilities {
      - parameter fileName: File Name
      - returns: JSON in Dictionary format [String:AnyObject]
      */
-    fileprivate class func getDummyResponeJSON(fromFile fileName:String)->Dictionary<String,AnyObject>{
+    private class func getDummyResponeJSON(fromFile fileName:String)->Dictionary<String,AnyObject>{
         
         var dummyData:[String:AnyObject]! = nil;
         var JSONData:Data?
@@ -119,7 +135,7 @@ open class Utilities {
      - parameter fileName: File Name
      - returns: JSON in Dictionary format [String:AnyObject]
      */
-    fileprivate class func getJSONDataFromFile(_ fileName:String)->[String:AnyObject]?{
+    private class func getJSONDataFromFile(_ fileName:String)->[String:AnyObject]?{
         
         var dummyData:[String:AnyObject]! = nil;
         var JSONData:Data?
@@ -147,5 +163,43 @@ open class Utilities {
         }
         
         return dummyData
+    }
+    
+    /// Retrieves a dictionary from referred plist file saved in bundle
+    ///
+    /// - Parameter fileName: Name of plist file without extension
+    /// - Returns: result dictionary of type [String:Any], nil for invalid data
+    private class func getJSONDictionaryFrom(PlistFile fileName:String) -> [String:Any]? {
+        
+        /// Verifying the file url
+        guard let fileURL = Bundle.main.url(forResource: fileName, withExtension: "plist") else {
+            return nil
+        }
+        
+        /// Fetching contents of the file and converting to dictionary
+        guard let contentData = try? Data(contentsOf: fileURL), let plistData = try? PropertyListSerialization.propertyList(from: contentData, options: [], format: nil) as? [String:Any] else {
+            return nil
+        }
+        
+        return plistData
+    }
+    
+    /// Retrieves an array from referred plist file saved in bundle
+    ///
+    /// - Parameter fileName: Name of plist file without extension
+    /// - Returns: result array of type [Any], nil for invalid data
+    private class func getArrayFrom(PlistFile fileName:String) -> [Any]? {
+        
+        /// Verifying the file url
+        guard let fileURL = Bundle.main.url(forResource: fileName, withExtension: "plist") else {
+            return nil
+        }
+        
+        /// Fetching contents of the file and converting to array of any objects
+        guard let contentData = try? Data(contentsOf: fileURL), let plistData = try? PropertyListSerialization.propertyList(from: contentData, options: [], format: nil) as? [Any] else {
+            return nil
+        }
+        
+        return plistData
     }
 }

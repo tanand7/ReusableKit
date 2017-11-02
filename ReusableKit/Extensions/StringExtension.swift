@@ -111,6 +111,11 @@ extension String {
         return Date(timeIntervalSince1970: doubleValue)
     }
     
+    /// Removes new line break from the string
+    public var removeHTMLBreaks:String {
+        return self.replacingOccurrences(of: "<br>", with: "\n").replacingOccurrences(of: "</br>", with: "\n")
+    }
+    
     /// Converts a date string from one format to another format
     ///
     /// - Parameters:
@@ -209,7 +214,7 @@ extension String {
     private func getAttributtedString() -> NSAttributedString{
         var attributedString:NSAttributedString = NSAttributedString(string: self)
         do {
-            attributedString = try NSAttributedString(data: self.data(using: String.Encoding.unicode)!, options: [NSDocumentTypeDocumentAttribute : NSHTMLTextDocumentType], documentAttributes: nil)
+            attributedString = try NSAttributedString(data: self.data(using: String.Encoding.unicode)!, options: [.documentType : NSAttributedString.DocumentType.html], documentAttributes: nil)
         } catch(let error as NSError){
             debugPrint(error.localizedDescription)
         }
