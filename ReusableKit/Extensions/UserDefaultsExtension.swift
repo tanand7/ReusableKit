@@ -15,7 +15,7 @@ extension UserDefaults {
      - parameter object: Object to be saved to the memory
      - parameter key:    key for which the data to be stored
      */
-    public func setCustomObject(_ object:AnyObject, forKey key:String) {
+    open func setCustomObject(_ object:AnyObject, forKey key:String) {
         addObject(object, forKey: key);
     }
     
@@ -24,7 +24,7 @@ extension UserDefaults {
      - parameter key: Key to get the saved data
      - returns: Object saved, returns nil if object not available
      */
-    public func customObjectForKey(_ key:String) -> AnyObject?{
+    open func customObjectForKey(_ key:String) -> AnyObject?{
         
         return getCustomObjectForKey(key);
     }

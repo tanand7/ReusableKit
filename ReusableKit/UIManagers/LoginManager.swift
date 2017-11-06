@@ -43,24 +43,24 @@ import UIKit
 /// LoginManager helps to manage the login process much easily
 /// It reduces the developer effort by avoiding basic validations, variable declarations etc
 /// This is inherited from a UIViewController class
-public class LoginManager:UIViewController {
+open class LoginManager:UIViewController {
     
     /// Stores the login delegate. This will notifies the receiever about important events
-    public weak var loginDelegate:LoginManagerDelegate?
+    open weak var loginDelegate:LoginManagerDelegate?
     
     /// Defines the username field
-    @IBOutlet public weak var txtUsername:UITextField!
+    @IBOutlet open weak var txtUsername:UITextField!
     /// Defines the password field
-    @IBOutlet public weak var txtPassword:UITextField!
+    @IBOutlet open weak var txtPassword:UITextField!
     /// Defines the login submit button
-    @IBOutlet public weak var btnSubmitButton:UIButton!
+    @IBOutlet open weak var btnSubmitButton:UIButton!
     /// Defines the signup button
-    @IBOutlet public weak var btnSignupButton:UIButton?
+    @IBOutlet open weak var btnSignupButton:UIButton?
     /// Defines the forgot password button
-    @IBOutlet public weak var btnForgotPassword:UIButton?
+    @IBOutlet open weak var btnForgotPassword:UIButton?
     
     /// Stores the error message that occurrs during signup process
-    public var errorMessage = ""
+    open var errorMessage = ""
     
     /// Invokes when the user taps on the login button
     @IBAction public final func tappedLoginButton(sender:UIButton){
@@ -77,13 +77,13 @@ public class LoginManager:UIViewController {
         showForgotPassword()
     }
     
-    // Mark: Public Methods
+    // Mark: open Methods
     
     /**
      Validates the user inputs, checks for empty fields in the form
      - returns: returns true if there is no empty fields
      */
-    public func validateUserDetails() -> Bool {
+    open func validateUserDetails() -> Bool {
         return isValidUserData()
     }
     

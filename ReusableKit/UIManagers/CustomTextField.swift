@@ -8,24 +8,24 @@
 
 import UIKit
 @IBDesignable
-public class CustomTextField:UITextField {
+open class CustomTextField:UITextField {
     
-    public var padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5);
+    open var padding = UIEdgeInsets(top: 0, left: 5, bottom: 0, right: 5);
     
-    override public func textRect(forBounds bounds: CGRect) -> CGRect {
+    override open func textRect(forBounds bounds: CGRect) -> CGRect {
         return UIEdgeInsetsInsetRect(bounds, padding)
     }
     
-    override public func placeholderRect(forBounds bounds: CGRect) -> CGRect {
+    override open func placeholderRect(forBounds bounds: CGRect) -> CGRect {
         return UIEdgeInsetsInsetRect(bounds, padding)
     }
     
-    override public func editingRect(forBounds bounds: CGRect) -> CGRect {
+    override open func editingRect(forBounds bounds: CGRect) -> CGRect {
         return UIEdgeInsetsInsetRect(bounds, padding)
     }
     
     // IBInspectable for placehodler color
-    @IBInspectable public var placeHolderColor: UIColor? {
+    @IBInspectable open var placeHolderColor: UIColor? {
         get {
             return self.placeHolderColor
         }
@@ -35,20 +35,20 @@ public class CustomTextField:UITextField {
     }
     
     // IBInspectable to set the custom bordercolor  for the textfield
-    @IBInspectable public var bordercolor:UIColor = UIColor.clear{
+    @IBInspectable open var bordercolor:UIColor = UIColor.clear{
         didSet {
             layer.borderColor = bordercolor.cgColor
         }
     }
     
     // IBInspectable to set the custom borderwidth for the textfield
-    @IBInspectable public var borderwidth:CGFloat = 0 {
+    @IBInspectable open var borderwidth:CGFloat = 0 {
         didSet{
             layer.borderWidth = borderwidth
         }
     }
     // IBInspectable to set the corner radius for the textfield
-    @IBInspectable public var cornerradius:CGFloat = 0 {
+    @IBInspectable open var cornerradius:CGFloat = 0 {
         didSet{
             layer.cornerRadius = cornerradius
         }

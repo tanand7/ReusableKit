@@ -41,12 +41,12 @@ import UIKit
 }
 
 /// Class that contains basic functionalities for a registration view contoller
-public class SignUpManager: UIViewController {
+open class SignUpManager: UIViewController {
 
     // MARK: - Properties -
     
     /// Stores the error message if any error occurs
-    public var errorMessage = ""
+    open var errorMessage = ""
     
     /// Delegate for the signup manager
     weak var signupDelegate:SignupManagerDelegate?
@@ -54,19 +54,19 @@ public class SignUpManager: UIViewController {
     // MARK: - Outlets -
     
     /// TextField for First Name
-    @IBOutlet weak public var txtFirstName: UITextField!
+    @IBOutlet weak open var txtFirstName: UITextField!
     /// TextField for Last Name
-    @IBOutlet weak public var txtLastName: UITextField?
+    @IBOutlet weak open var txtLastName: UITextField?
     /// TextField for EmailID
-    @IBOutlet weak public var txtEmailID: UITextField?
+    @IBOutlet weak open var txtEmailID: UITextField?
     /// Text Field for Phone Number
-    @IBOutlet weak public var txtPhoneNumber: UITextField?
+    @IBOutlet weak open var txtPhoneNumber: UITextField?
     /// TextField for Password
-    @IBOutlet weak public var txtPassword: UITextField!
+    @IBOutlet weak open var txtPassword: UITextField!
     /// TextField for ConfrimPassword
-    @IBOutlet weak public var txtConfirmPassword: UITextField!
+    @IBOutlet weak open var txtConfirmPassword: UITextField!
     /// Button for Sign up
-    @IBOutlet weak public var btnSignup:UIButton?
+    @IBOutlet weak open var btnSignup:UIButton?
     
     /**
      Function when sign up button tapped
@@ -80,7 +80,7 @@ public class SignUpManager: UIViewController {
      Function when privacy policy button tapped
      - parameter sender: AnyObject
      */
-    @IBAction public func tappedPrivacyPolicyURL(sender:AnyObject){
+    @IBAction open func tappedPrivacyPolicyURL(sender:AnyObject){
         signupDelegate?.didTapPrivacyPolicyURL?()
     }
     
@@ -88,7 +88,7 @@ public class SignUpManager: UIViewController {
      Function when terms and condition button tapped
      - parameter sender: AnyObject
      */
-    @IBAction public func tappedTermsAndConditionsURL(sender:AnyObject){
+    @IBAction open func tappedTermsAndConditionsURL(sender:AnyObject){
         signupDelegate?.didTapTermsAndConditionsURL?()
     }
     
@@ -96,7 +96,7 @@ public class SignUpManager: UIViewController {
      Performs basic validatins on the available user data
      - returns: true if validation is success
      */
-    public func isValidRegistrationData()->Bool{
+    open func isValidRegistrationData()->Bool{
         return isValidRegistration()
     }
     

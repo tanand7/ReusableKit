@@ -11,17 +11,17 @@ import UIKit
 
 extension UIViewController {
     /// Showing the navigation bar
-    public func showTopNavigationBar(){
+    open func showTopNavigationBar(){
         self.navigationController?.isNavigationBarHidden = false
     }
     
     /// Hiding the navigation bar
-    public func hideTopNavigationBar(){
+    open func hideTopNavigationBar(){
         self.navigationController?.isNavigationBarHidden = true
     }
     
     /// Hiding the background of navigation bar
-    public func clearNavigationBackground(){
+    open func clearNavigationBackground(){
         // Hiding the background of navigation bar
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         self.navigationController?.navigationBar.shadowImage = UIImage()

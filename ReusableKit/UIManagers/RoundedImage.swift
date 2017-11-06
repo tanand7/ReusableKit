@@ -8,21 +8,21 @@
 
 import UIKit
 
-@IBDesignable public class RoundedImage: UIImageView {
+@IBDesignable open class RoundedImage: UIImageView {
     //ibinspectable to set the custom bordercolor for button
-    @IBInspectable public var borderColor: UIColor = UIColor.clear {
+    @IBInspectable open var borderColor: UIColor = UIColor.clear {
         didSet {
             self.layer.borderColor = borderColor.cgColor
         }
     }
     //ibinspectable to set the custom borderwidth for button
-    @IBInspectable public var borderWidth: CGFloat = 0 {
+    @IBInspectable open var borderWidth: CGFloat = 0 {
         didSet {
             self.layer.borderWidth = borderWidth
         }
     }
     //ibinspectable to set the corner radius for button
-    @IBInspectable public var cornerRadius: CGFloat = 0 {
+    @IBInspectable open var cornerRadius: CGFloat = 0 {
         didSet {
             self.layer.cornerRadius = cornerRadius
             self.clipsToBounds      = true

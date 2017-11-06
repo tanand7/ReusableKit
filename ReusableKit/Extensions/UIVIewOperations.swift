@@ -17,7 +17,7 @@ extension UIView {
      - parameter width:  Width of the border
      - parameter radius: Radius required for the view
      */
-    public func drawBorderWithColor(_ color:UIColor, borderWidth width:Float, andRadius radius:Float){
+    open func drawBorderWithColor(_ color:UIColor, borderWidth width:Float, andRadius radius:Float){
         // Sets the border Color
         self.layer.borderColor  = color.cgColor;
         // Sets the border width
@@ -29,7 +29,7 @@ extension UIView {
     /**
      Clears the border color of a UIView
      */
-    public func clearBorderColor(){
+    open func clearBorderColor(){
         // Sets the border Color
         self.layer.borderColor  = UIColor.clear.cgColor;
     }
@@ -37,21 +37,21 @@ extension UIView {
     /**
      Marks a red border around view
      */
-    public func markAsErrorView(){
+    open func markAsErrorView(){
         self.drawBorderWithColor(UIColor.red, borderWidth: 1.0, andRadius: 1.0);
     }
     
     /**
      Converts a view to circular view from rectangular view
      */
-    public func makeCircularView() {
+    open func makeCircularView() {
         self.layer.cornerRadius = self.frame.size.width/2;
     }
     
     /**
      Animates the UIView with shake effects
     */
-    public func shakeAnimation(){
+    open func shakeAnimation(){
         let animation = CABasicAnimation(keyPath: "position")
         animation.duration = 0.07
         animation.repeatCount = 4
@@ -64,7 +64,7 @@ extension UIView {
     /**
      Adds a blur view to the current view
      */
-    public func addBlurView(){
+    open func addBlurView(){
         
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -73,7 +73,7 @@ extension UIView {
         self.addSubview(blurEffectView)
     }
     
-    public func setBackgroundImage(image:UIImage){
+    open func setBackgroundImage(image:UIImage){
         UIGraphicsBeginImageContext(self.frame.size)
         image.draw(in: self.bounds)
         

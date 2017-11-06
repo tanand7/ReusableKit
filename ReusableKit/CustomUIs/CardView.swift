@@ -9,30 +9,30 @@
 import UIKit
 
 @IBDesignable
-class CardView: UIView {
+open class CardView: UIView {
     
-    @IBInspectable public var masksToBounds:Bool = false {
+    @IBInspectable open var masksToBounds:Bool = false {
         
         didSet {
             layer.masksToBounds = masksToBounds
         }
     }
     
-    @IBInspectable public var shadowOffset:CGSize =  CGSize(width: 0, height: 5){
+    @IBInspectable open var shadowOffset:CGSize =  CGSize(width: 0, height: 5){
         
         didSet{
             layer.shadowOffset = shadowOffset
         }
     }
     
-    @IBInspectable public var shadowRadius:CGFloat =  5 {
+    @IBInspectable open var shadowRadius:CGFloat =  5 {
         
         didSet{
             layer.shadowRadius = shadowRadius
         }
     }
     
-    @IBInspectable public var shadowOpacity:Float =  0.5 {
+    @IBInspectable open var shadowOpacity:Float =  0.5 {
         
         didSet{
             layer.shadowOpacity = shadowOpacity

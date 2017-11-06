@@ -11,7 +11,7 @@ import Foundation
 extension UICollectionViewCell {
     
     /// Sets shadow to the cell
-    func setShadow() {
+    open func setShadow() {
         self.layer.masksToBounds   = false
         self.layer.shadowOpacity   = 0.5
         self.layer.shadowRadius    = 5
