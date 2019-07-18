@@ -8,6 +8,7 @@
 
 import UIKit
 
+@available(iOS, deprecated: 11.0, obsoleted: 11.0, message: "Use UICardView instead")
 @IBDesignable
 open class CardView: UIView {
     
@@ -39,4 +40,36 @@ open class CardView: UIView {
         }
     }
     
+}
+
+@available(iOS 11.0, *)
+@IBDesignable
+class UICardView: UIView {
+    
+    @IBInspectable var shadowOffsetWidth: Int  = 0
+    @IBInspectable var shadowOffsetHeight: Int = 0
+    @IBInspectable var shadowColor: UIColor?   = UIColor.black
+    @IBInspectable var shadowOpacity: Float    = 0.5
+    @IBInspectable var topLeft: Bool           = true
+    @IBInspectable var topRight: Bool          = true
+    @IBInspectable var bottomLeft: Bool        = true
+    @IBInspectable var bottmRight: Bool        = true
+    
+    var arrayCorners:CACornerMask              = []
+    
+    override func layoutSubviews() {
+        layer.cornerRadius                         = cornerRadius
+        let shadowPath                             = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
+        
+        layer.masksToBounds                        = false
+        layer.shadowColor                          = shadowColor?.cgColor
+        layer.shadowOffset                         = CGSize(width: shadowOffsetWidth, height: shadowOffsetHeight);
+        layer.shadowOpacity                        = shadowOpacity
+        layer.shadowPath                           = shadowPath.cgPath
+        if(topLeft){arrayCorners.update(with: .layerMinXMinYCorner)}
+        if(topRight){arrayCorners.update(with: .layerMaxXMinYCorner)}
+        if(bottomLeft){arrayCorners.update(with: .layerMinXMaxYCorner)}
+        if(bottmRight){arrayCorners.update(with: .layerMaxXMaxYCorner)}
+        layer.maskedCorners                        = arrayCorners
+    }
 }

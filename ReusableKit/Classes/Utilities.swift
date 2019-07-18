@@ -103,7 +103,7 @@ open class Utilities {
         var JSONData:Data?
         if let sampleJSONPath = Bundle.main.path(forResource: fileName, ofType: "json") {
             do {
-                JSONData = try Data(contentsOf: URL(fileURLWithPath: sampleJSONPath), options: NSData.ReadingOptions()) as Data!
+                JSONData = try Data(contentsOf: URL(fileURLWithPath: sampleJSONPath), options: NSData.ReadingOptions()) as Data
             } catch let error as NSError {
                 print(error.localizedDescription)
             }
@@ -141,7 +141,7 @@ open class Utilities {
         var JSONData:Data?
         if let sampleJSONPath = Bundle.main.path(forResource: fileName, ofType: "json") {
             do {
-                JSONData = try Data(contentsOf: URL(fileURLWithPath: sampleJSONPath), options: NSData.ReadingOptions()) as Data!
+                JSONData = try Data(contentsOf: URL(fileURLWithPath: sampleJSONPath), options: NSData.ReadingOptions()) as Data
             } catch let error as NSError {
                 print(error.localizedDescription)
             }

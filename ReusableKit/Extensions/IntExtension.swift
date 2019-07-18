@@ -17,6 +17,11 @@ extension Int {
         return "₹ \(self)"
     }
     
+    public var boolValue:Bool {
+        
+        return (self as NSNumber).boolValue
+    }
+    
     /// Converts integer to String
     public var asWord:String {
         

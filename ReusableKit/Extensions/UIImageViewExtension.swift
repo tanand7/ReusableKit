@@ -11,7 +11,7 @@ import UIKit
 
 extension UIImageView {
     
-    open func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+    open func downloadedFrom(url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard
@@ -26,10 +26,16 @@ extension UIImageView {
             }.resume()
     }
     
-    open func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+    open func downloadedFrom(link: String, contentMode mode: UIView.ContentMode = .scaleAspectFit) {
         guard let url = URL(string: link) else { return }
         downloadedFrom(url: url, contentMode: mode)
     }
     
+    open func scaleForCircularImage() {
+        self.layer.masksToBounds = false
+        self.clipsToBounds       = true
+        self.contentMode         = UIView.ContentMode.scaleAspectFill
+        self.cornerRadius        = 10
+    }
 }
 

@@ -11,6 +11,56 @@ import UIKit
 
 extension UIView {
     
+    @IBInspectable public var cornerRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+            layer.masksToBounds = newValue > 0
+        }
+    }
+    
+    @IBInspectable public var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+    
+    @IBInspectable public var borderColor: UIColor? {
+        get {
+            return UIColor(cgColor: layer.borderColor!)
+        }
+        set {
+            layer.borderColor = newValue?.cgColor
+        }
+    }
+    
+    open func springAnimation(){
+        self.transform = CGAffineTransform(scaleX: 0.0, y: 0.1)
+        UIView.animate(withDuration: 2.0,
+                       delay: 0,
+                       usingSpringWithDamping: 0.2,
+                       initialSpringVelocity: 6.0,
+                       options: .allowUserInteraction,
+                       animations: { self.transform = .identity },
+                       completion: nil)
+    }
+    
+    open func setGradient(PrimaryColor primaryColor:UIColor, andSecondaryColor secondaryColor:UIColor) {
+        
+        let colorTop            = primaryColor.cgColor
+        let colorBottom         = secondaryColor.cgColor
+        let gradientLayer       = CAGradientLayer()
+        gradientLayer.colors    = [colorTop, colorBottom]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.frame     = self.bounds
+        self.layer.insertSublayer(gradientLayer, above: nil)
+    }
+    
     /**
      Draws boreder for the view with given color and width
      - parameter color:  UIColor object in which the border to be drawn
@@ -66,7 +116,7 @@ extension UIView {
      */
     open func addBlurView(){
         
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.light)
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = self.bounds
         blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight] // for supporting device rotation

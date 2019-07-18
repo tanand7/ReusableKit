@@ -13,7 +13,7 @@ extension String {
     /// Retrieves the length of the string
     public var length:Int{
         
-        return self.characters.count
+        return self.count
     }
     
     /// Generates UIColor from hex string
@@ -116,6 +116,47 @@ extension String {
         return self.replacingOccurrences(of: "<br>", with: "\n").replacingOccurrences(of: "</br>", with: "\n")
     }
     
+    /// Applies strike through to a string
+    public var applyStrikeThrough:NSMutableAttributedString {
+        
+        let attributeString =  NSMutableAttributedString(string: self)
+        attributeString.addAttribute(.strikethroughStyle, value: 2, range: NSMakeRange(0, attributeString.length))
+        return attributeString
+    }
+    
+    /// Generates date from a string
+    ///
+    /// - Parameter fromFormat: From fromat
+    /// - Returns: date if conversion successfull
+    public func dateFromFormat(fromFormat:String, toFormat newFormat:String? = nil) -> Date? {
+        
+        let dateFormatter        = DateFormatter()
+        dateFormatter.locale     = Locale(identifier: "en_US_POSIX")
+        dateFormatter.dateFormat = fromFormat
+        let newDate = dateFormatter.date(from: self)
+        
+        guard let toFormat = newFormat, let newDateString = newDate?.convertTo(DateFormat: toFormat) else {
+            return newDate
+        }
+        dateFormatter.dateFormat = toFormat
+        return dateFormatter.date(from: newDateString)
+    }
+    
+    /// removes new line from the string
+    public var removeNewlines:String {
+        return self.components(separatedBy: .newlines).joined(separator: " ")
+    }
+    
+    /// Picks digits form the string and merge them into a number
+    public var integerFromDigits:Int {
+        return components(separatedBy: CharacterSet.decimalDigits.inverted).joined().intValue
+    }
+    
+    /// Converts a string into integer
+    public var intValue:Int {
+        return (self as NSString).integerValue
+    }
+    
     /// Converts a date string from one format to another format
     ///
     /// - Parameters:
@@ -173,7 +214,7 @@ extension String {
         }
         
         // Verifying whether the string has only 6 letters and converting the hex string to UIColor
-        if (cString.characters.count == 6) {
+        if (cString.count == 6) {
             var rgbValue:UInt32 = 0
             Scanner(string: cString).scanHexInt32(&rgbValue);
             color = UIColor(red: CGFloat((rgbValue & 0xFF0000) >> 16)/255.0, green: CGFloat((rgbValue & 0x00FF00) >> 8)/255.0,
@@ -200,7 +241,7 @@ extension String {
     private func randomString(length: Int) -> String {
         
         let charactersString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        let charactersArray : [Character] = Array(charactersString.characters)
+        let charactersArray : [Character] = Array(charactersString)
         
         var string = ""
         for _ in 0..<length {

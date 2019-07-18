@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1738473B22E0983100910401 /* UIDeviceExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1738473A22E0983100910401 /* UIDeviceExtension.swift */; };
+		1738473D22E0990300910401 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1738473C22E0990300910401 /* DateExtension.swift */; };
 		17450A6B1E497EEC009D4519 /* ReusableKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 17450A691E497EEC009D4519 /* ReusableKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		17450A871E4987B6009D4519 /* SystemInfoAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17450A731E4987B6009D4519 /* SystemInfoAPI.swift */; };
 		17450A891E4987B6009D4519 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17450A761E4987B6009D4519 /* Utilities.swift */; };
@@ -17,10 +19,8 @@
 		17450A8E1E4987B6009D4519 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17450A7C1E4987B6009D4519 /* StringExtension.swift */; };
 		17450A8F1E4987B6009D4519 /* UIViewControllerOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17450A7D1E4987B6009D4519 /* UIViewControllerOperations.swift */; };
 		17450A901E4987B6009D4519 /* UIVIewOperations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17450A7E1E4987B6009D4519 /* UIVIewOperations.swift */; };
-		17450A911E4987B6009D4519 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17450A801E4987B6009D4519 /* CustomButton.swift */; };
 		17450A921E4987B6009D4519 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17450A811E4987B6009D4519 /* CustomTextField.swift */; };
 		17450A931E4987B6009D4519 /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17450A821E4987B6009D4519 /* LoginManager.swift */; };
-		17450A941E4987B6009D4519 /* RoundedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17450A831E4987B6009D4519 /* RoundedImage.swift */; };
 		17450A951E4987B6009D4519 /* SignUpManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17450A841E4987B6009D4519 /* SignUpManager.swift */; };
 		17E647861F7243F700B6D554 /* FloatRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E647851F7243F700B6D554 /* FloatRatingView.swift */; };
 		17E647881F72447B00B6D554 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17E647871F72447B00B6D554 /* CardView.swift */; };
@@ -29,6 +29,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1738473A22E0983100910401 /* UIDeviceExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIDeviceExtension.swift; sourceTree = "<group>"; };
+		1738473C22E0990300910401 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		17450A661E497EEC009D4519 /* ReusableKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ReusableKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		17450A691E497EEC009D4519 /* ReusableKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReusableKit.h; sourceTree = "<group>"; };
 		17450A6A1E497EEC009D4519 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -41,10 +43,8 @@
 		17450A7C1E4987B6009D4519 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		17450A7D1E4987B6009D4519 /* UIViewControllerOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewControllerOperations.swift; sourceTree = "<group>"; };
 		17450A7E1E4987B6009D4519 /* UIVIewOperations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIVIewOperations.swift; sourceTree = "<group>"; };
-		17450A801E4987B6009D4519 /* CustomButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		17450A811E4987B6009D4519 /* CustomTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		17450A821E4987B6009D4519 /* LoginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
-		17450A831E4987B6009D4519 /* RoundedImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImage.swift; sourceTree = "<group>"; };
 		17450A841E4987B6009D4519 /* SignUpManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpManager.swift; sourceTree = "<group>"; };
 		17E647851F7243F700B6D554 /* FloatRatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatRatingView.swift; sourceTree = "<group>"; };
 		17E647871F72447B00B6D554 /* CardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -121,6 +121,8 @@
 				17450A7E1E4987B6009D4519 /* UIVIewOperations.swift */,
 				17E647891F72469400B6D554 /* UICollectionViewExtension.swift */,
 				17E6478B1F72502D00B6D554 /* CommonExtensions.swift */,
+				1738473A22E0983100910401 /* UIDeviceExtension.swift */,
+				1738473C22E0990300910401 /* DateExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -128,10 +130,8 @@
 		17450A7F1E4987B6009D4519 /* UIManagers */ = {
 			isa = PBXGroup;
 			children = (
-				17450A801E4987B6009D4519 /* CustomButton.swift */,
 				17450A811E4987B6009D4519 /* CustomTextField.swift */,
 				17450A821E4987B6009D4519 /* LoginManager.swift */,
-				17450A831E4987B6009D4519 /* RoundedImage.swift */,
 				17450A841E4987B6009D4519 /* SignUpManager.swift */,
 			);
 			path = UIManagers;
@@ -184,12 +184,12 @@
 		17450A5D1E497EEB009D4519 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = MyyShop;
 				TargetAttributes = {
 					17450A651E497EEB009D4519 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 8MDQQQJCHM;
+						DevelopmentTeam = V9AV4856G7;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -228,6 +228,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17450A921E4987B6009D4519 /* CustomTextField.swift in Sources */,
+				1738473D22E0990300910401 /* DateExtension.swift in Sources */,
 				17450A8E1E4987B6009D4519 /* StringExtension.swift in Sources */,
 				17450A8F1E4987B6009D4519 /* UIViewControllerOperations.swift in Sources */,
 				17450A8B1E4987B6009D4519 /* DataExtension.swift in Sources */,
@@ -238,9 +239,8 @@
 				17450A8A1E4987B6009D4519 /* UIImageViewExtension.swift in Sources */,
 				17450A931E4987B6009D4519 /* LoginManager.swift in Sources */,
 				17E6478C1F72502D00B6D554 /* CommonExtensions.swift in Sources */,
-				17450A911E4987B6009D4519 /* CustomButton.swift in Sources */,
+				1738473B22E0983100910401 /* UIDeviceExtension.swift in Sources */,
 				17450A8D1E4987B6009D4519 /* UserDefaultsExtension.swift in Sources */,
-				17450A941E4987B6009D4519 /* RoundedImage.swift in Sources */,
 				17450A891E4987B6009D4519 /* Utilities.swift in Sources */,
 				17450A871E4987B6009D4519 /* SystemInfoAPI.swift in Sources */,
 				17E647881F72447B00B6D554 /* CardView.swift in Sources */,
@@ -264,6 +264,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -271,6 +272,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -324,6 +326,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -331,6 +334,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -369,7 +373,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 8MDQQQJCHM;
+				DEVELOPMENT_TEAM = V9AV4856G7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -377,11 +381,11 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.arackal.ReusableKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anand.ReusableKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -390,7 +394,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = 8MDQQQJCHM;
+				DEVELOPMENT_TEAM = V9AV4856G7;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -398,11 +402,11 @@
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.arackal.ReusableKit;
+				PRODUCT_BUNDLE_IDENTIFIER = com.anand.ReusableKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
-				SWIFT_VERSION = 4.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};

@@ -21,29 +21,75 @@ extension Dictionary where Key: Comparable, Value: Equatable {
     }
 }
 
-extension Date {
+// MARK: - Array Extension -
+
+extension Array {
     
-    /// Helps to convert the date into given date format
-    ///
-    /// - Parameter toFormat: Format to which the date to be converted
-    /// - Returns: date in the converted format
-    public func convertTo(DateFormat toFormat:String) -> String {
-        
-        let dateFormatter        = DateFormatter()
-        dateFormatter.dateFormat = toFormat
-        
-        return dateFormatter.string(from: self)
+    /// Whetehr the array is non empty or not
+    public var isNonEmpty:Bool {
+        return !self.isEmpty
+    }
+}
+
+extension Bool {
+    public var intValue: Int {
+        return self ? 1 : 0
+    }
+}
+
+// MARK: - Double Extension -
+
+extension Double {
+    
+    var currencyFormat:String {
+        return NumberFormatter.localizedString(from: NSNumber(value: self), number: .currency)
     }
     
-    public var startOfWeek: Date? {
-        let gregorian = Calendar(identifier: .gregorian)
-        guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
-        return gregorian.date(byAdding: .day, value: 1, to: sunday)
+    func roundTo(places:Int) -> Double {
+        let divisor = pow(10.0, Double(places))
+        return (self * divisor).rounded() / divisor
     }
+}
+
+// MARK: - Copying for Swift -
+
+protocol Copying {
+    init(instance:Self)
+}
+
+extension Copying {
     
-    public var endOfWeek: Date? {
-        let gregorian = Calendar(identifier: .gregorian)
-        guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
-        return gregorian.date(byAdding: .day, value: 7, to: sunday)
+    /// making copy of current object
+    func copy() -> Self {
+        return Self.init(instance: self)
+    }
+}
+
+// MARK: - Rotatable View -
+
+@IBDesignable
+class UIRotatableLabel:UILabel {
+    @IBInspectable public var angle:CGFloat = 0.0 {
+        didSet {
+            
+            self.layer.anchorPoint = CGPoint.zero
+            self.transform         = CGAffineTransform(rotationAngle: CGFloat.pi * angle/180.0)
+        }
+    }
+}
+
+extension SystemInfoAPI {
+    
+    // Defines the bundle version
+    public var bundleVersion:String {
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? ""
+    }
+}
+
+extension URL {
+    
+    public func valueOf(Parameter parameterName:String) -> String? {
+        guard let url = URLComponents(string: self.absoluteString) else { return nil }
+        return url.queryItems?.first(where: { $0.name == parameterName })?.value
     }
 }

@@ -13,18 +13,18 @@ import UIKit
 /// such as Device model, OSName, version, UUID etc
 open class SystemInfoAPI {
     
-    open static let shared = SystemInfoAPI()
+    public static let shared = SystemInfoAPI()
     
     // MARK:- Device Specific details -
     
     /// Stores the model name of the device
-    open let deviceModel       = UIDevice.current.model
+    public let deviceModel       = UIDevice.current.model
     /// Stores the operating system name
-    open let deviceOSName    = UIDevice.current.systemName
+    public let deviceOSName    = UIDevice.current.systemName
     /// Stores the operating system version
-    open let deviceOSVersion = UIDevice.current.systemVersion
+    public let deviceOSVersion = UIDevice.current.systemVersion
     /// Stores the localized version of model name
-    open let localizedModel  = UIDevice.current.localizedModel
+    public let localizedModel  = UIDevice.current.localizedModel
     /// Stores the device name
     open var deviceName : String? {
         
