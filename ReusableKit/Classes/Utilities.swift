@@ -177,7 +177,7 @@ open class Utilities {
         }
         
         /// Fetching contents of the file and converting to dictionary
-        guard let contentData = try? Data(contentsOf: fileURL), let plistData = try? PropertyListSerialization.propertyList(from: contentData, options: [], format: nil) as? [String:Any] else {
+        guard let contentData = try? Data(contentsOf: fileURL), let plistData = ((try? PropertyListSerialization.propertyList(from: contentData, options: [], format: nil) as? [String:Any]) as [String : Any]??) else {
             return nil
         }
         
@@ -196,7 +196,7 @@ open class Utilities {
         }
         
         /// Fetching contents of the file and converting to array of any objects
-        guard let contentData = try? Data(contentsOf: fileURL), let plistData = try? PropertyListSerialization.propertyList(from: contentData, options: [], format: nil) as? [Any] else {
+        guard let contentData = try? Data(contentsOf: fileURL), let plistData = ((try? PropertyListSerialization.propertyList(from: contentData, options: [], format: nil) as? [Any]) as [Any]??) else {
             return nil
         }
         
