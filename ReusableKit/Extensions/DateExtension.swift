@@ -8,13 +8,13 @@
 
 import Foundation
 
-extension Date {
+public extension Date {
     
     /// Helps to convert the date into given date format
     ///
     /// - Parameter toFormat: Format to which the date to be converted
     /// - Returns: date in the converted format
-    public func convertTo(DateFormat toFormat:String) -> String {
+    func convertTo(DateFormat toFormat:String) -> String {
         
         let dateFormatter        = DateFormatter()
         dateFormatter.dateFormat = toFormat
@@ -22,13 +22,13 @@ extension Date {
         return dateFormatter.string(from: self)
     }
     
-    public var startOfWeek: Date? {
+    var startOfWeek: Date? {
         let gregorian = Calendar(identifier: .gregorian)
         guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
         return gregorian.date(byAdding: .day, value: 1, to: sunday)
     }
     
-    public var endOfWeek: Date? {
+    var endOfWeek: Date? {
         let gregorian = Calendar(identifier: .gregorian)
         guard let sunday = gregorian.date(from: gregorian.dateComponents([.yearForWeekOfYear, .weekOfYear], from: self)) else { return nil }
         return gregorian.date(byAdding: .day, value: 7, to: sunday)
@@ -40,7 +40,7 @@ extension Date {
     ///   - startDate: start date or the smallest date
     ///   - endDate: end date or the largest date
     /// - Returns: true if the date falls between
-    public func isBetween(StartDate startDate:Date, andEndDate endDate:Date) -> Bool {
+    func isBetween(StartDate startDate:Date, andEndDate endDate:Date) -> Bool {
         return (min(startDate, endDate) ... max(startDate, endDate)).contains(self)
     }
     
@@ -50,7 +50,7 @@ extension Date {
     ///   - startTime: Start time
     ///   - endTime: End time
     /// - Returns: true if the time falls between
-    public func isTimeBetween(StartTime startTime:Date, andTime endTime:Date) -> Bool {
+    func isTimeBetween(StartTime startTime:Date, andTime endTime:Date) -> Bool {
         
         return self.compareTimeOnly(date: startTime) == .orderedDescending && self.compareTimeOnly(date: endTime) == .orderedAscending
     }
@@ -59,7 +59,7 @@ extension Date {
     ///
     /// - Parameter date: Date Time  to be compared
     /// - Returns: comparison result
-    public func compareTimeOnly(date:Date) -> ComparisonResult {
+    func compareTimeOnly(date:Date) -> ComparisonResult {
         
         let calendar    = Calendar.current
         let components2 = calendar.dateComponents([.hour, .minute, .second], from: date)
@@ -79,7 +79,7 @@ extension Date {
     ///
     /// - Parameter date: Date to be compared
     /// - Returns: comparison result
-    public func compareDateOnly(date:Date) -> ComparisonResult {
+    func compareDateOnly(date:Date) -> ComparisonResult {
         
         let order = Calendar.current.compare(self, to: date, toGranularity: .day)
         switch order {

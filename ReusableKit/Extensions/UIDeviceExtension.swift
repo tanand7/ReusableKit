@@ -80,4 +80,12 @@ public extension UIDevice {
         return mapToDevice(identifier: identifier)
     }()
     
+    /// check whether current device is simulator or not
+    var isSimulatorDevice:Bool {
+        #if targetEnvironment(simulator)
+        return true
+        #else
+        return false
+        #endif
+    }
 }

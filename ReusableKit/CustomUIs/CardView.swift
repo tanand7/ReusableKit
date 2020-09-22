@@ -8,56 +8,22 @@
 
 import UIKit
 
-@available(iOS, deprecated: 11.0, obsoleted: 11.0, message: "Use UICardView instead")
-@IBDesignable
-open class CardView: UIView {
-    
-    @IBInspectable open var masksToBounds:Bool = false {
-        
-        didSet {
-            layer.masksToBounds = masksToBounds
-        }
-    }
-    
-    @IBInspectable open var shadowOffset:CGSize =  CGSize(width: 0, height: 5){
-        
-        didSet{
-            layer.shadowOffset = shadowOffset
-        }
-    }
-    
-    @IBInspectable open var shadowRadius:CGFloat =  5 {
-        
-        didSet{
-            layer.shadowRadius = shadowRadius
-        }
-    }
-    
-    @IBInspectable open var shadowOpacity:Float =  0.5 {
-        
-        didSet{
-            layer.shadowOpacity = shadowOpacity
-        }
-    }
-    
-}
-
 @available(iOS 11.0, *)
 @IBDesignable
-class UICardView: UIView {
+open class UICardView: UIView {
     
-    @IBInspectable var shadowOffsetWidth: Int  = 0
-    @IBInspectable var shadowOffsetHeight: Int = 0
-    @IBInspectable var shadowColor: UIColor?   = UIColor.black
-    @IBInspectable var shadowOpacity: Float    = 0.5
-    @IBInspectable var topLeft: Bool           = true
-    @IBInspectable var topRight: Bool          = true
-    @IBInspectable var bottomLeft: Bool        = true
-    @IBInspectable var bottmRight: Bool        = true
+    @IBInspectable open var shadowOffsetWidth: Int  = 0
+    @IBInspectable open var shadowOffsetHeight: Int = 0
+    @IBInspectable open var shadowColor: UIColor?   = UIColor.black
+    @IBInspectable open var shadowOpacity: Float    = 0.5
+    @IBInspectable open var topLeft: Bool           = true
+    @IBInspectable open var topRight: Bool          = true
+    @IBInspectable open var bottomLeft: Bool        = true
+    @IBInspectable open var bottmRight: Bool        = true
     
-    var arrayCorners:CACornerMask              = []
+    open var arrayCorners:CACornerMask              = []
     
-    override func layoutSubviews() {
+    open override func layoutSubviews() {
         layer.cornerRadius                         = cornerRadius
         let shadowPath                             = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
         

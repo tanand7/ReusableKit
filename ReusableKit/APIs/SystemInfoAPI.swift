@@ -50,4 +50,9 @@ open class SystemInfoAPI {
         
         return Bundle.main.object(forInfoDictionaryKey: "CFBundleIdentifier") as! String
     }
+    
+    // Defines the bundle version
+    open var bundleVersion:String {
+        return Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? ""
+    }
 }

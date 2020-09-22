@@ -1,16 +1,16 @@
 Pod::Spec.new do |s|
 
   s.name         = "ReusableKit"
-  s.version      = "2.0"
+  s.version      = "3.0"
   s.summary      = "It helps you to make your coding more easy."
-  s.description  = "reusable kit contains lot of reusable codes that helps you to make your life more easy. This is basically for iOS developer who uses iOS 9 or greater."
+  s.description  = "reusable kit contains lot of reusable codes that helps you to make your life more easy. This is basically for iOS developer who uses iOS 12 or greater."
 
   s.homepage     = "https://about.me/tanand7"
   s.license      = "MIT"
   s.author       = "Anand T"
 
-  s.platform     = :ios, "9.0"
-  s.source       = { :git => "https://github.com/tanand7/ReusableKit.git", :tag => "2.0" }
+  s.platform     = :ios, "12.0"
+  s.source       = { :git => "https://github.com/tanand7/ReusableKit.git", :tag => "3.0" }
   s.framework    = "UIKit"
   s.source_files  = "ReusableKit", "ReusableKit/**/*.{h,m,swift}"
   s.exclude_files = "Classes/Exclude"

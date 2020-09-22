@@ -9,27 +9,32 @@
 import Foundation
 import UIKit
 
-extension Int {
+public extension Int {
     
     /// Adds the rupee symbol and
-    public var stringWithRupeeSymbol:String {
+    var stringWithRupeeSymbol:String {
         
-        return "₹ \(self)"
+        return NumberFormatter.localizedString(from: NSNumber(value: self), number: .currency)
     }
     
-    public var boolValue:Bool {
+    var stringValue:String {
+        return "\(self)"
+    }
+
+    
+    var boolValue:Bool {
         
         return (self as NSNumber).boolValue
     }
     
     /// Converts integer to String
-    public var asWord:String {
+    var asWord:String {
         
         return spellOut()
     }
     
     /// Converts the time in seconds to time format hh:mm:ss
-    public var formattedTime:String {
+    var formattedTime:String {
         
         return convertToTimeString()
     }
@@ -61,10 +66,10 @@ extension Int {
     }
 }
 
-extension Float {
+public extension Float {
     
     /// Adds the rupee symbol and
-    public var stringWithRupeeSymbol:String {
-        return "₹ \(self)"
+    var stringWithRupeeSymbol:String {
+        return NumberFormatter.localizedString(from: NSNumber(value: self), number: .currency)
     }
 }

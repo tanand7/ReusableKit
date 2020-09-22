@@ -23,23 +23,23 @@ extension Dictionary where Key: Comparable, Value: Equatable {
 
 // MARK: - Array Extension -
 
-extension Array {
+public extension Array {
     
     /// Whetehr the array is non empty or not
-    public var isNonEmpty:Bool {
+    var isNonEmpty:Bool {
         return !self.isEmpty
     }
 }
 
-extension Bool {
-    public var intValue: Int {
+public extension Bool {
+    var intValue: Int {
         return self ? 1 : 0
     }
 }
 
 // MARK: - Double Extension -
 
-extension Double {
+public extension Double {
     
     var currencyFormat:String {
         return NumberFormatter.localizedString(from: NSNumber(value: self), number: .currency)
@@ -68,7 +68,7 @@ extension Copying {
 // MARK: - Rotatable View -
 
 @IBDesignable
-class UIRotatableLabel:UILabel {
+open class UIRotatableLabel:UILabel {
     @IBInspectable public var angle:CGFloat = 0.0 {
         didSet {
             
@@ -78,17 +78,10 @@ class UIRotatableLabel:UILabel {
     }
 }
 
-extension SystemInfoAPI {
-    
-    // Defines the bundle version
-    public var bundleVersion:String {
-        return Bundle.main.object(forInfoDictionaryKey: "CFBundleVersion") as? String ?? ""
-    }
-}
 
-extension URL {
+public extension URL {
     
-    public func valueOf(Parameter parameterName:String) -> String? {
+    func valueOf(Parameter parameterName:String) -> String? {
         guard let url = URLComponents(string: self.absoluteString) else { return nil }
         return url.queryItems?.first(where: { $0.name == parameterName })?.value
     }

@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-extension UIView {
+public extension UIView {
     
-    @IBInspectable public var cornerRadius: CGFloat {
+    @IBInspectable var cornerRadius: CGFloat {
         get {
             return layer.cornerRadius
         }
@@ -21,7 +21,7 @@ extension UIView {
         }
     }
     
-    @IBInspectable public var borderWidth: CGFloat {
+    @IBInspectable var borderWidth: CGFloat {
         get {
             return layer.borderWidth
         }
@@ -30,7 +30,7 @@ extension UIView {
         }
     }
     
-    @IBInspectable public var borderColor: UIColor? {
+    @IBInspectable var borderColor: UIColor? {
         get {
             return UIColor(cgColor: layer.borderColor!)
         }
@@ -39,7 +39,7 @@ extension UIView {
         }
     }
     
-    open func springAnimation(){
+    func springAnimation(){
         self.transform = CGAffineTransform(scaleX: 0.0, y: 0.1)
         UIView.animate(withDuration: 2.0,
                        delay: 0,
@@ -50,7 +50,7 @@ extension UIView {
                        completion: nil)
     }
     
-    open func setGradient(PrimaryColor primaryColor:UIColor, andSecondaryColor secondaryColor:UIColor) {
+    func setGradient(PrimaryColor primaryColor:UIColor, andSecondaryColor secondaryColor:UIColor) {
         
         let colorTop            = primaryColor.cgColor
         let colorBottom         = secondaryColor.cgColor
@@ -67,7 +67,7 @@ extension UIView {
      - parameter width:  Width of the border
      - parameter radius: Radius required for the view
      */
-    open func drawBorderWithColor(_ color:UIColor, borderWidth width:Float, andRadius radius:Float){
+    func drawBorderWithColor(_ color:UIColor, borderWidth width:Float, andRadius radius:Float){
         // Sets the border Color
         self.layer.borderColor  = color.cgColor;
         // Sets the border width
@@ -79,7 +79,7 @@ extension UIView {
     /**
      Clears the border color of a UIView
      */
-    open func clearBorderColor(){
+    func clearBorderColor(){
         // Sets the border Color
         self.layer.borderColor  = UIColor.clear.cgColor;
     }
@@ -87,21 +87,21 @@ extension UIView {
     /**
      Marks a red border around view
      */
-    open func markAsErrorView(){
+    func markAsErrorView(){
         self.drawBorderWithColor(UIColor.red, borderWidth: 1.0, andRadius: 1.0);
     }
     
     /**
      Converts a view to circular view from rectangular view
      */
-    open func makeCircularView() {
+    func makeCircularView() {
         self.layer.cornerRadius = self.frame.size.width/2;
     }
     
     /**
      Animates the UIView with shake effects
     */
-    open func shakeAnimation(){
+    func shakeAnimation(){
         let animation = CABasicAnimation(keyPath: "position")
         animation.duration = 0.07
         animation.repeatCount = 4
@@ -111,10 +111,22 @@ extension UIView {
         self.layer.add(animation, forKey: "position")
     }
     
+    func flashAnimation(){
+        
+        let flash = CABasicAnimation(keyPath: "opacity")
+        flash.duration = 0.5
+        flash.fromValue = 1
+        flash.toValue = 0.1
+        flash.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        flash.autoreverses = true
+        flash.repeatCount = 2
+        layer.add(flash, forKey: nil)
+    }
+    
     /**
      Adds a blur view to the current view
      */
-    open func addBlurView(){
+    func addBlurView(){
         
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.light)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
@@ -123,7 +135,7 @@ extension UIView {
         self.addSubview(blurEffectView)
     }
     
-    open func setBackgroundImage(image:UIImage){
+    func setBackgroundImage(image:UIImage){
         UIGraphicsBeginImageContext(self.frame.size)
         image.draw(in: self.bounds)
         

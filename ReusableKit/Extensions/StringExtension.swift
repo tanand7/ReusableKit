@@ -157,6 +157,32 @@ extension String {
         return (self as NSString).integerValue
     }
     
+    public var attributedText:NSAttributedString {
+        
+        return NSAttributedString(string: self)
+    }
+    
+    /// Generates date from a string
+    ///
+    /// - Parameter fromFormat: From fromat
+    /// - Returns: date if conversion successfull
+    public func dateFromFormat(fromFormat:String, toFormat newFormat:String? = nil, andTimeZone timezone:TimeZone? = nil) -> Date? {
+        
+        let dateFormatter        = DateFormatter()
+        dateFormatter.locale     = Locale(identifier: "en_US_POSIX")
+        if let originalTimezone = timezone {
+            dateFormatter.timeZone   = originalTimezone
+        }
+        dateFormatter.dateFormat = fromFormat
+        let newDate = dateFormatter.date(from: self)
+        
+        guard let toFormat = newFormat, let newDateString = newDate?.convertTo(DateFormat: toFormat) else {
+            return newDate
+        }
+        dateFormatter.dateFormat = toFormat
+        return dateFormatter.date(from: newDateString)
+    }
+    
     /// Converts a date string from one format to another format
     ///
     /// - Parameters:
@@ -167,6 +193,7 @@ extension String {
         
         var convertedString       = self
         let inputFormatter        = DateFormatter()
+        inputFormatter.locale     = Locale(identifier: "en_US_POSIX")
         inputFormatter.dateFormat = fromFormat
         
         if let date = inputFormatter.date(from: self) {
